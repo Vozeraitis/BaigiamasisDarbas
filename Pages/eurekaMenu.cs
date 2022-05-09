@@ -20,12 +20,8 @@ namespace baigiamasisDarbas.Pages
         //Niekaip nepavyko padaryti, kad pagal CSS selektorių ar paprastą nukopijuotą XPath pasirinktų būtent tuos elementus, kuriuos noriu (Gal dėl to, kad tokie pat elementai naudojami ir mobile menu navigacijai. Todėl teko pasižiūrėti ir pasimokyti, kaip pačiam apsirašyti XPath. Konkrečiai šiuo atveju pasirenkami elementai, kurie savo href'e turi atitinkamą dalį teksto ir yra "wrapper" klasės vaikai (o ne "navigation" klasės, kuri, kiek supratau, naudojama mobile menu))
         public static IReadOnlyCollection<IWebElement> knyguKeliones => Driver.FindElements(By.XPath("//div[@class='wrapper']//a[contains(@data-href, '/collections/knygu-keliones')]"));
         
-        //Elementas apsirašytas ta (tik su public), kad būtų galima naudoti testuose su kitų klasių metodais, jiems paduodant būtent šios klasės elementą. Buvo rašoma, kai dar turėjau vilčių padaryti optimizuotą veikiantį kategorijų page.
-        //public IWebElement knyguKelionesJaponija => Driver.FindElement(By.XPath("//header/div[1]/div[2]/div[1]/nav[1]/ul[1]/li[2]/ul[1]/li[3]/ul[1]/li[3]/a[1]/span[1]"));
-        
         public static IWebElement kategorijosPavadinimas => Driver.FindElement(By.XPath("//*[@id='CollectionSection']/header/h1"));
         
-        //Submenu elementų sąrašas, naudojamas tikrinti kategorijos pavadinimą, paspaudus ant konkretaus submenu linko.
         public static string[] knygųKelionesSubmenu = { "Italija", "JAV", "Japonija", "Prancūzija", "Lotynų Amerika", "Kosmosas" };
 
         //Pagrindinė testo mintis buvo eiti per submenu elementų sąrašą, paspausti ant kiekvieno iš jų ir patikrinti ar adresas atitinka href. Taip turėjo pasitvirtinti, kad tikrai nueita į tą kategoriją. Šito niekaip nepavyko padaryti, metė įvairias klaidas, kurių nesugebėjau išspręsti. Tada nusprendžiau tikrinti kiekvieno aplankyto puslapio antraštę. 

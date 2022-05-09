@@ -14,9 +14,7 @@ namespace baigiamasisDarbas.Pages.Bendri_veiksmai
     internal class eurekaVeiksmai : BasePage
     {
         public eurekaVeiksmai(IWebDriver webDriver) : base(webDriver) { }
-        //Aprašomas mygtukas, kuris atsiranda tik pasirinkus ir įsijungus kažkurios prekės puslapį. Galima perkelti, apsirašyti ir naudoti iš atskiros "Produktai" klasės.
         public IWebElement pirktiMygtukas => Driver.FindElement(By.XPath("//button[@id='AddToCart']"));
-        //Mygtukas viršutinėje juostoje, nuoroda į krepšelį. Krepšelį galima pasiekti ir per kitą mygtuką, kuris šiame darbe nenaudojamas.
         public IWebElement krepšelisMygtukas => Driver.FindElement(By.XPath("//body/div[@id='shopify-section-header']/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/a[1]"));
 
         public void paspaustiPirktiMygtuką() 

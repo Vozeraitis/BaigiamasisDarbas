@@ -17,11 +17,8 @@ namespace baigiamasisDarbas.Pages
 
         private const string PageAdress = "https://knygynas.biz/cart";
 
-        //Elementas nurodo į pirmos (arba paskutinės į krepšelį pridėtos) prekės pavadinimą. Naudoju tikrinti, ar į krepšelį paskutinė pridėta būtent ta prekė, kurią ir pridėjau.
         private static IWebElement prekėKrepšelyje => Driver.FindElement(By.XPath("//body/main[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[3]/div[1]/div[1]/div[1]/div[2]"));
-        //Tikrinama ar krepšelyje atsirado būtent tiek prekių, kiek nurodoma.
         private static IWebElement prekiųKiekisKrepšelyje => Driver.FindElement(By.XPath("//input[@class='cart__quantity-selector']"));
-        //Pasirinkimas, kaip atsiimti prekes. Jų puslapyje iš viso yra keturi, bet šiai užduočiai rinkausi ir apsirašiau tik vieną.
         private static IWebElement atsiimtiKnygyneMygtukas => Driver.FindElement(By.XPath("//*[@id='parcelyWidget']/div/div/div[3]/span[1]/span[1]"));
         private static IWebElement mokėtiMygtukas => Driver.FindElement(By.XPath("//button[contains(text(),'Pereiti prie mokėjimo')]"));
 
